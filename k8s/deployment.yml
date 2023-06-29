@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: pokemon-api
-        image: ghcr.io/schultyy/rust-pokemon-api:0.0.1
+        image: ghcr.io/schultyy/rust-pokemon-api:0.0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8000

@@ -54,7 +54,14 @@ fn specific_pokemon(generation: i64) -> Json<Vec<Pokemon>> {
     )
 }
 
+#[get("/health")]
+fn health() -> String {
+    return "OK".into()
+}
+
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/pokemon", routes![all_pokemon, specific_pokemon])
+    rocket::build()
+        .mount("/", routes![health])
+        .mount("/pokemon", routes![all_pokemon, specific_pokemon])
 }
